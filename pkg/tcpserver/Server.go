@@ -9,9 +9,7 @@ import (
 	"sync"
 )
 
-/**
-Server wraps net.TCPListener to simplify multi-threaded message passing
-*/
+// Server wraps net.TCPListener to simplify multi-threaded message passing
 type Server struct {
 	listener        net.TCPListener
 	connectionQueue chan *net.Conn
@@ -19,9 +17,7 @@ type Server struct {
 	handler         ConnectionHandler
 }
 
-/**
-NewServer creates a new server that runs on port and handles connections using handler
-*/
+// NewServer creates a new server that runs on port and handles connections using handler
 func NewServer(port int, handler ConnectionHandler) (*Server, error) {
 	addr := net.TCPAddr{
 		IP:   net.IPv4(0, 0, 0, 0),
@@ -61,8 +57,8 @@ func (s *Server) queueConnections() {
 	}
 }
 
-/**
-Starts the server
+/*
+Start starts the server
 A goroutine called queueConnections() does just that
 Connections in the queue are dispatched to goroutines that call handleMessage()
 Listens for the interrupt signal and terminates gracefully when encountered

@@ -3,7 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="303f5e29-9c73-4d4b-83ce-fa1266b2f834" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/tcpclient/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/tcpclient/main.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmd/tcpserver/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/tcpserver/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/tcpclient/Client.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/tcpclient/Client.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/tcpmessage/Message.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/tcpmessage/Message.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/tcpserver/ConnectionHandler.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/tcpserver/ConnectionHandler.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pkg/tcpserver/Server.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/tcpserver/Server.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -36,40 +40,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Go" />
   </component>
-  <component name="RunManager" selected="Go Test.test">
-    <configuration name="run client" type="GoApplicationRunConfiguration" factoryName="Go Application">
-      <module name="gtcp" />
-      <working_directory value="$PROJECT_DIR$/" />
-      <go_parameters value="-i" />
-      <parameters value="127.0.0.1 8080 PING" />
-      <kind value="PACKAGE" />
-      <filePath value="$PROJECT_DIR$/" />
-      <package value="github.com/evindunn/gtcp/cmd/tcpClient" />
-      <directory value="$PROJECT_DIR$/" />
-      <method v="2" />
-    </configuration>
-    <configuration name="run server" type="GoApplicationRunConfiguration" factoryName="Go Application">
-      <module name="gtcp" />
-      <working_directory value="$PROJECT_DIR$/" />
-      <go_parameters value="-i" />
-      <parameters value="8080" />
-      <kind value="PACKAGE" />
-      <filePath value="$PROJECT_DIR$/cmd/r" />
-      <package value="github.com/evindunn/gtcp/cmd/tcpServer" />
-      <directory value="$PROJECT_DIR$/" />
-      <method v="2" />
-    </configuration>
-    <configuration name="test" type="GoTestRunConfiguration" factoryName="Go Test">
-      <module name="gtcp" />
-      <working_directory value="$PROJECT_DIR$/" />
-      <go_parameters value="-i -covermode=count" />
-      <framework value="gotest" />
-      <kind value="DIRECTORY" />
-      <package value="github.com/evindunn/gtcp/pkg/tcpMessage" />
-      <directory value="$PROJECT_DIR$/pkg/tcpmessage" />
-      <filePath value="$PROJECT_DIR$/" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Go Build.run client">
     <list>
       <item itemvalue="Go Build.run server" />
       <item itemvalue="Go Build.run client" />
@@ -104,10 +75,10 @@
       <screen x="0" y="27" width="2560" height="1053" />
     </state>
     <state x="210" y="215" width="800" height="675" key="#Go_Modules_(vgo)/0.27.2560.1053@0.27.2560.1053" timestamp="1578185570826" />
-    <state x="738" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1578197196135">
+    <state x="738" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1578200110593">
       <screen x="0" y="27" width="2560" height="1053" />
     </state>
-    <state x="738" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.2560.1053@0.27.2560.1053" timestamp="1578197196135" />
+    <state x="738" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.2560.1053@0.27.2560.1053" timestamp="1578200110593" />
     <state x="994" y="344" width="561" height="416" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1578197421330">
       <screen x="0" y="27" width="2560" height="1053" />
     </state>
@@ -136,5 +107,9 @@
       <screen x="0" y="27" width="2560" height="1053" />
     </state>
     <state x="111" y="188" key="SettingsEditor/0.27.2560.1053@0.27.2560.1053" timestamp="1578199307688" />
+    <state x="303" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1578200366198">
+      <screen x="0" y="27" width="2560" height="1053" />
+    </state>
+    <state x="303" y="259" width="672" height="678" key="search.everywhere.popup/0.27.2560.1053@0.27.2560.1053" timestamp="1578200366198" />
   </component>
 </project>

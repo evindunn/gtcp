@@ -42,7 +42,7 @@ func main() {
 		fmt.Printf("Sent %d\n", counter)
 		asyncSend(fmt.Sprintf("%s:%d", host, port), fmt.Sprintf("%s%d", message, counter), &wg)
 
-		counter += 1
+		counter++
 	}
 
 	wg.Wait()

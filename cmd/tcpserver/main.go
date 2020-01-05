@@ -10,14 +10,10 @@ import (
 	"strconv"
 )
 
-/**
-Handler is a type implementing the github.com/evindunn/gtcp/pkg/tcpserver/ConnectionHandler interface
-*/
+// Handler is a type implementing the github.com/evindunn/gtcp/pkg/tcpserver/ConnectionHandler interface
 type Handler struct{}
 
-/**
-HandleConnection handles a connection for github.com/evindunn/gtcp/pkg/tcpserver
-*/
+// HandleConnection handles a connection for github.com/evindunn/gtcp/pkg/tcpserver
 func (h *Handler) HandleConnection(c *net.Conn) {
 	connection := *c
 	msg, err := tcpmessage.MessageFromConnection(c)
