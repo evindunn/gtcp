@@ -2,34 +2,48 @@ package main
 
 import (
 	"fmt"
+	logger "github.com/evindunn/gologyourself"
 	"github.com/evindunn/gtcp/pkg/tcpmessage"
 	"github.com/evindunn/gtcp/pkg/tcpserver"
-	"log"
 	"net"
 	"os"
 	"strconv"
 )
 
 // Handler is a type implementing the github.com/evindunn/gtcp/pkg/tcpserver/ConnectionHandler interface
-type Handler struct{}
+type Handler struct{
+	server *tcpserver.Server
+	srvLogger logger.Logger
+}
 
 // HandleConnection handles a connection for github.com/evindunn/gtcp/pkg/tcpserver
 func (h *Handler) HandleConnection(c *net.Conn) {
 	connection := *c
-	msg, err := tcpmessage.MessageFromConnection(c)
-	if err != nil {
-		log.Printf("[%s] Error parsing connection: %s\n", (*c).RemoteAddr().String(), err)
-	} else {
-		log.Printf(
-			"[%s] Size: %d, Compressed: %v, Content: %s", connection.RemoteAddr().String(),
-			msg.GetSize(),
-			msg.IsCompressed(),
-			string(msg.GetContent()))
-	}
+	defer connection.Close()
 
-	err = connection.Close()
+	client := connection.RemoteAddr().String()
+	msg, err := tcpmessage.MessageFromConnection(c)
+
 	if err != nil {
-		log.Printf("[%s] Error closing connection connection: %s\n", (*c).RemoteAddr().String(), err)
+		h.srvLogger.Log(logger.LevelError, fmt.Sprintf("[%s] Error parsing connection: %s", client, err))
+	} else {
+		h.srvLogger.Log(
+			logger.LevelInfo,
+			fmt.Sprintf(
+				"[%s] Size: %d, Compressed: %v, Content: %s", client,
+				msg.GetSize(),
+				msg.IsCompressed(),
+				string(msg.GetContent())),
+		)
+
+		sendMsg := tcpmessage.NewMessage("PONG", false)
+		_, err := connection.Write(sendMsg.ToBytes())
+		if err != nil {
+			h.srvLogger.Log(
+				logger.LevelError,
+				fmt.Sprintf("[%s] Error writing to connection: %s", client, err),
+			)
+		}
 	}
 }
 
@@ -46,6 +60,7 @@ func main() {
 	}
 
 	var h Handler
+	h.srvLogger = logger.NewLogger(logger.LevelDebug)
 	srv, err := tcpserver.NewServer(port, &h)
 
 	if err != nil {

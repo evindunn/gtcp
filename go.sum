@@ -1,3 +1,5 @@
+github.com/evindunn/gologyourself v0.0.0-20200105175707-1ab1f5850b34 h1:+GbcT2UYQ3AodAIR2vfrwAahPUBL+6iEPQGe0s5fmG4=
+github.com/evindunn/gologyourself v0.0.0-20200105175707-1ab1f5850b34/go.mod h1:Ofhx5ShejlCTsB6+UxrODygn5AXBRw0x1uuwJTJjYug=
 github.com/google/go-cmp v0.3.0 h1:crn/baboCvb5fXaQ0IJ1SGTsTVrWpDsCWC8EGETZijY=
 github.com/google/go-cmp v0.3.0/go.mod h1:8QqcDgzrUqlUb/G2PQTWiueGozuR1884gddMywk6iLU=
 github.com/pkg/errors v0.8.1 h1:iURUrRGxPUNPdy5/HRSm+Yj6okJ6UtLINN0Q9M4+h3I=

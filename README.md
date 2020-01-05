@@ -39,8 +39,8 @@ Simple TCP message passing in Go
   - Message.Decompress() error
   
 #### Examples
-- github.com/evindunn/gtcp/cmd/tcpclient
-- github.com/evindunn/gtcp/cmd/tcpserver
+- [github.com/evindunn/gtcp/examples/tcpclient](./examples/tcpclient/main.go)
+- [github.com/evindunn/gtcp/examples/tcpserver](./examples/tcpserver/main.go)
 
 Handle connections using the interface defined in [ConnectionHandler.go](pkg/tcpserver/ConnectionHandler.go)
 ```go
@@ -48,8 +48,8 @@ type Handler struct {}
 
 // This method makes the Handler type implement the ConnectionHandler interface
 func (h *Handler) HandleConnection(c *net.Conn) {
+    defer (*c).Close()
     log.Println("Connected!")
-    (*c).Close()
 }
 ```
 
@@ -70,47 +70,4 @@ The [Message](pkg/tcpserver/Server.go) class defines a simple protocol for passi
 ```text
 |------- 8 bytes---------|------- 1 byte ---------|------- Remaining bytes ---------|
 |----- messageSize ------|----- isCompressed -----|---------- content --------------|
-```
-
-Receiving a message server-side ([example](cmd/tcpserver/main.go)):
-```go
-type Handler struct {}
-
-func (h *Handler) HandleConnection(c *net.Conn) {
-	msg, err := tcpMessage.MessageFromConnection(c)
-	if err != nil {
-		log.Printf("[%s] Error parsing connection: %s\n", (*c).RemoteAddr().String(), err)
-	} else {
-        log.Printf(
-            "[%s] Size: %d, Compressed: %v, Content: %s", connection.RemoteAddr().String(),
-            msg.GetSize(),
-            msg.IsCompressed(),
-            string(msg.GetContent()))
-    }
-
-    (*c).Close()
-}
-
-func main() {
-    var h Handler
-    port := 8080
-
-    srv, _ := tcpServer.NewServer(port, &h)
-    srv.Start()
-}
-```
-
-Sending a Message client-side ([example in tcpClient.Send()](pkg/tcpclient/Client.go)):
-```go
-addrStr := "127.0.0.1:8080"
-conn, _ := net.Dial("tcp", addrStr)
-defer conn.Close()
-
-msg := tcpMessage.NewMessage(msgStr, false)
-msgBytes := msg.ToBytes()
-
-bytesWritten, err := conn.Write(msgBytes)
-if err != nil {
-    return err
-}
 ```

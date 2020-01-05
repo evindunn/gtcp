@@ -6,7 +6,7 @@
     <parameters value="8080" />
     <kind value="PACKAGE" />
     <filePath value="$PROJECT_DIR$/cmd/r" />
-    <package value="github.com/evindunn/gtcp/cmd/tcpserver" />
+    <package value="github.com/evindunn/gtcp/examples/tcpserver" />
     <directory value="$PROJECT_DIR$/" />
     <method v="2" />
   </configuration>
