@@ -1,4 +1,4 @@
-module github.com/evindunn/Tcp
+module github.com/evindunn/gtcp
 
 go 1.13
 

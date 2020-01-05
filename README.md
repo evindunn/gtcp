@@ -1,15 +1,15 @@
 # GoLang TCP
 
 <a href="https://github.com/evindunn/Tcp/actions?query=workflow%3ABuild">
-  <img type="image/svg" alt="gotest-status" src="https://github.com/evindunn/Tcp/workflows/Build/badge.svg">
+  <img type="image/svg" alt="gotest-status" src="https://github.com/evindunn/gtcp/workflows/Build/badge.svg">
 </a>
 
 <a href="https://github.com/evindunn/Tcp/actions?query=workflow%3ATest">
-  <img type="image/svg" alt="gotest-status" src="https://github.com/evindunn/Tcp/workflows/Test/badge.svg">
+  <img type="image/svg" alt="gotest-status" src="https://github.com/evindunn/gtcp/workflows/Test/badge.svg">
 </a>
 
 <a href='https://coveralls.io/github/evindunn/Tcp?branch=master'>
-  <img src='https://coveralls.io/repos/github/evindunn/Tcp/badge.svg?branch=master&service=github' alt='Coverage Status' />
+  <img src='https://coveralls.io/repos/github/evindunn/gtcp/badge.svg?branch=master&service=github' alt='Coverage Status' />
 </a>
 
 
