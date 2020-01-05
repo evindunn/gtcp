@@ -1,18 +1,18 @@
 # GoLang TCP
 
-<a href="https://github.com/evindunn/gtcp/actions?query=workflow%3ABuild">
+<a href="https://github.com/evindunn/gtcp/actions?query=workflow%3ABuild" target="_blank">
   <img type="image/svg" alt="gotest-status" src="https://github.com/evindunn/gtcp/workflows/Build/badge.svg">
 </a>
 
-<a href="https://github.com/evindunn/gtcp/actions?query=workflow%3ATest">
+<a href="https://github.com/evindunn/gtcp/actions?query=workflow%3ATest" target="_blank">
   <img type="image/svg" alt="gotest-status" src="https://github.com/evindunn/gtcp/workflows/Test/badge.svg">
 </a>
 
-<a href='https://coveralls.io/github/evindunn/gtcp?branch=master'>
+<a href='https://coveralls.io/github/evindunn/gtcp?branch=master' target="_blank">
   <img src='https://coveralls.io/repos/github/evindunn/gtcp/badge.svg?branch=master&service=github' alt='Coverage Status' />
 </a>
 
-<a href="https://goreportcard.com/report/github.com/evindunn/gtcp">
+<a href="https://goreportcard.com/report/github.com/evindunn/gtcp" target="_blank">
   <img src="https://goreportcard.com/badge/github.com/evindunn/gtcp" alt="Go report card"/>
 </a>
 

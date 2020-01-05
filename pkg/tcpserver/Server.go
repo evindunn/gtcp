@@ -10,7 +10,7 @@ import (
 )
 
 /**
-Wrapper for net.TCPListener to simplify multi-threaded message passing
+Server: Wrapper for net.TCPListener to simplify multi-threaded message passing
 */
 type Server struct {
 	listener        net.TCPListener
