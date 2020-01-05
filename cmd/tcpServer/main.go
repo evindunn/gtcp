@@ -20,6 +20,13 @@ func (h *Handler) HandleConnection(c *net.Conn) {
 	} else {
 		log.Printf("[%s] %s", connection.RemoteAddr().String(), string(msg.GetContent()))
 	}
+
+	err = connection.Close()
+	if err != nil {
+		log.Printf("[%s] Error closing connection connection: %s\n", (*c).RemoteAddr().String(), err)
+	} else {
+		log.Printf("[%s] %s", connection.RemoteAddr().String(), string(msg.GetContent()))
+	}
 }
 
 func main() {

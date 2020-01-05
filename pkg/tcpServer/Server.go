@@ -42,6 +42,7 @@ func NewServer(port int, handler ConnectionHandler) (*Server, error) {
 func (s *Server) handleMessage(c *net.Conn, wg *sync.WaitGroup) {
 	wg.Add(1)
 	defer wg.Done()
+
 	s.handler.HandleConnection(c)
 }
 
