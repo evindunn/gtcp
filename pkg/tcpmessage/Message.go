@@ -134,7 +134,7 @@ func MessageFromConnection(c *net.Conn) (*Message, error) {
 
 	// Read header
 	header := make([]byte, HeaderSize)
-	for i:= 0; i < len(header); i++ {
+	for i := 0; i < len(header); i++ {
 		header[i], err = connReader.ReadByte()
 		if err != nil {
 			return nil, err
@@ -146,7 +146,7 @@ func MessageFromConnection(c *net.Conn) (*Message, error) {
 	content = make([]byte, msgSize)
 
 	// Read content
-	for i:= 0; i < len(content); i++ {
+	for i := 0; i < len(content); i++ {
 		content[i], err = connReader.ReadByte()
 		if err != nil {
 			return nil, err

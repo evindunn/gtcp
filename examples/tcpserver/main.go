@@ -11,8 +11,8 @@ import (
 )
 
 // Handler is a type implementing the github.com/evindunn/gtcp/pkg/tcpserver/ConnectionHandler interface
-type Handler struct{
-	server *tcpserver.Server
+type Handler struct {
+	server    *tcpserver.Server
 	srvLogger logger.Logger
 }
 

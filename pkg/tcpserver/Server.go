@@ -10,9 +10,9 @@ import (
 
 // Server wraps net.TCPListener to simplify multi-threaded message passing
 type Server struct {
-	listener        *net.TCPListener
-	signalQueue     chan os.Signal
-	handler         ConnectionHandler
+	listener    *net.TCPListener
+	signalQueue chan os.Signal
+	handler     ConnectionHandler
 }
 
 // NewServer creates a new server that runs on port and handles connections using handler
