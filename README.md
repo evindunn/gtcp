@@ -9,11 +9,15 @@
 </a>
 
 <a href='https://coveralls.io/github/evindunn/gtcp?branch=master' target="_blank">
-  <img src='https://coveralls.io/repos/github/evindunn/gtcp/badge.svg?branch=master&service=github' alt='Coverage Status' />
+  <img src='https://coveralls.io/repos/github/evindunn/gtcp/badge.svg?branch=master&service=github&kill_cache=1' alt='Coverage Status' />
 </a>
 
 <a href="https://goreportcard.com/report/github.com/evindunn/gtcp" target="_blank">
   <img src="https://goreportcard.com/badge/github.com/evindunn/gtcp" alt="Go report card"/>
+</a>
+
+<a href="https://www.gnu.org/licenses/gpl-3.0" target="_blank">
+    <img src="https://img.shields.io/badge/License-GPLv3-blue.svg" alt="License"/>
 </a>
 
 Simple TCP message passing in Go
