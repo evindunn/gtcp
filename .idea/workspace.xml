@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="303f5e29-9c73-4d4b-83ce-fa1266b2f834" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/build.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/build.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.github/workflows/test.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/test.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/tcpClient/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/tcpclient/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/tcpServer/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/tcpserver/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/tcpClient/Client.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/tcpclient/Client.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/tcpMessage/Message.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/tcpmessage/Message.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/tcpMessage/Message_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/tcpmessage/Message_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/tcpServer/ConnectionHandler.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/tcpserver/ConnectionHandler.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/tcpServer/Server.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/tcpserver/Server.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,6 +106,10 @@
       <screen x="0" y="27" width="2560" height="1053" />
     </state>
     <state x="738" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.2560.1053@0.27.2560.1053" timestamp="1578197196135" />
+    <state x="994" y="344" width="561" height="416" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1578197421330">
+      <screen x="0" y="27" width="2560" height="1053" />
+    </state>
+    <state x="994" y="344" width="561" height="416" key="#com.intellij.fileTypes.FileTypeChooser/0.27.2560.1053@0.27.2560.1053" timestamp="1578197421330" />
     <state x="1063" y="311" width="424" height="482" key="FileChooserDialogImpl" timestamp="1578186411184">
       <screen x="0" y="27" width="2560" height="1053" />
     </state>
