@@ -10,7 +10,7 @@ import (
 	"strconv"
 )
 
-type Handler struct {}
+type Handler struct{}
 
 func (h *Handler) HandleConnection(c *net.Conn) {
 	connection := *c

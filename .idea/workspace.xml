@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="303f5e29-9c73-4d4b-83ce-fa1266b2f834" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/tcpclient/Client.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/tcpclient/Client.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/tcpmessage/Message.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/tcpmessage/Message.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/tcpmessage/Message_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/tcpmessage/Message_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/tcpserver/ConnectionHandler.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/tcpserver/ConnectionHandler.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/tcpserver/Server.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/tcpserver/Server.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/tcpclient/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/tcpclient/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/tcpserver/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/tcpserver/main.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

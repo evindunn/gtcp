@@ -32,7 +32,6 @@ func main() {
 	}
 	message := os.Args[3]
 
-
 	counter := 0
 	var wg sync.WaitGroup
 	for {
