@@ -1,8 +1,8 @@
-package tcpClient
+package tcpclient
 
 import (
 	"fmt"
-	"github.com/evindunn/gtcp/pkg/tcpMessage"
+	"github.com/evindunn/gtcp/pkg/tcpmessage"
 	"net"
 )
 
@@ -15,7 +15,7 @@ func Send(addrStr string, msgStr string) error {
 		return err
 	}
 
-	msg := tcpMessage.NewMessage(msgStr, false)
+	msg := tcpmessage.NewMessage(msgStr, false)
 	msgBytes := msg.ToBytes()
 	bytesWritten, err := conn.Write(msgBytes)
 	if err != nil {
@@ -24,7 +24,7 @@ func Send(addrStr string, msgStr string) error {
 
 	actualBytes := len(msgBytes)
 	if bytesWritten != actualBytes {
-		return fmt.Errorf("bytes written not equal to tcpMessage size: %d != %d", bytesWritten, actualBytes)
+		return fmt.Errorf("bytes written not equal to tcpmessage size: %d != %d", bytesWritten, actualBytes)
 	}
 
 	return nil

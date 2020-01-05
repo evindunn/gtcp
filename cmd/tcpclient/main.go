@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/evindunn/gtcp/pkg/tcpClient"
+	"github.com/evindunn/gtcp/pkg/tcpclient"
 	"os"
 	"strconv"
 	"sync"
@@ -12,7 +12,7 @@ func asyncSend(address string, message string, wg *sync.WaitGroup) {
 	wg.Add(1)
 	defer wg.Done()
 
-	err := tcpClient.Send(address, message)
+	err := tcpclient.Send(address, message)
 	if err != nil {
 		fmt.Fprintln(os.Stderr, err)
 	}

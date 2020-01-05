@@ -12,14 +12,19 @@
   <img src='https://coveralls.io/repos/github/evindunn/gtcp/badge.svg?branch=master&service=github' alt='Coverage Status' />
 </a>
 
+<a href="https://goreportcard.com/report/github.com/evindunn/gtcp">
+  <img src="https://goreportcard.com/badge/github.com/evindunn/gtcp" alt="Go report card"/>
+</a>
+
 Simple TCP message passing in Go
 
-- tcpClient
+#### API
+- github.com/evindunn/gtcp/pkg/tcpclient
   - Send(addrStr string, msgStr string) error
-- tcpServer
+- github.com/evindunn/gtcp/pkg/tcpserver
   - NewServer(port int, handler ConnectionHandler) (*Server, error)
   - Server.Start()
-- tcpMessage
+- github.com/evindunn/gtcp/pkg/tcpmessage
   - NewMessage(content string, isCompressed bool) Message
   - MessageFromConnection(c *net.Conn) (*Message, error)
   - Message.ToBytes() []byte
@@ -28,8 +33,12 @@ Simple TCP message passing in Go
   - Message.IsCompressed() bool
   - Message.Compress() error
   - Message.Decompress() error
+  
+#### Examples
+- github.com/evindunn/gtcp/cmd/tcpclient
+- github.com/evindunn/gtcp/cmd/tcpserver
 
-Handle connections using the interface defined in [ConnectionHandler.go](./pkg/tcpServer/ConnectionHandler.go)
+Handle connections using the interface defined in [ConnectionHandler.go](pkg/tcpserver/ConnectionHandler.go)
 ```text
 type Handler struct {}
 
@@ -40,7 +49,7 @@ func (h *Handler) HandleConnection(c *net.Conn) {
 }
 ```
 
-Then use the handler with the [Server](./pkg/tcpServer/Server.go) struct
+Then use the handler with the [Server](pkg/tcpserver/Server.go) struct
 ```text
 var h Handler
 srv, err := tcpServer.NewServer(8080, &h)
@@ -53,13 +62,13 @@ if err != nil {
 srv.Start()
 ```
 
-The [Message](./pkg/tcpServer/Server.go) class defines a simple protocol for passing messages in TCP
+The [Message](pkg/tcpserver/Server.go) class defines a simple protocol for passing messages in TCP
 ```text
 |------- 8 bytes---------|------- 1 byte ---------|------- Remaining bytes ---------|
 |----- messageSize ------|----- isCompressed -----|---------- content --------------|
 ```
 
-Receiving a message server-side ([example](./cmd/tcpServer/main.go)):
+Receiving a message server-side ([example](cmd/tcpserver/main.go)):
 ```text
 type Handler struct {}
 
@@ -87,7 +96,7 @@ func main() {
 }
 ```
 
-Sending a Message client-side ([example in tcpClient.Send()](./pkg/tcpClient/Client.go)):
+Sending a Message client-side ([example in tcpClient.Send()](pkg/tcpclient/Client.go)):
 ```text
 addrStr := "127.0.0.1:8080"
 conn, _ := net.Dial("tcp", addrStr)

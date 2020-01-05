@@ -1,4 +1,4 @@
-package tcpMessage
+package tcpmessage
 
 import (
 	"bufio"
@@ -36,7 +36,7 @@ func NewMessage(content string, isCompressed bool) Message {
 func (m *Message) ToBytes() []byte {
 	msg := make([]byte, HeaderSize + m.GetSize())
 
-	// 8 bytes for tcpMessage size
+	// 8 bytes for tcpmessage size
 	binary.LittleEndian.PutUint64(msg, uint64(m.GetSize()))
 
 	// One byte for whether compressed

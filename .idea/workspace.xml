@@ -2,7 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="303f5e29-9c73-4d4b-83ce-fa1266b2f834" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/build.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/build.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.github/workflows/test.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/test.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/tcpClient/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/tcpclient/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/tcpServer/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/tcpserver/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/tcpClient/Client.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/tcpclient/Client.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/tcpMessage/Message.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/tcpmessage/Message.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/tcpMessage/Message_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/tcpmessage/Message_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/tcpServer/ConnectionHandler.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/tcpserver/ConnectionHandler.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/tcpServer/Server.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/tcpserver/Server.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +44,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
-  <component name="RunManager" selected="Go Build.run server">
+  <component name="RunManager" selected="Go Test.test">
     <configuration name="run client" type="GoApplicationRunConfiguration" factoryName="Go Application">
       <module name="gtcp" />
       <working_directory value="$PROJECT_DIR$/" />
@@ -64,7 +74,7 @@
       <framework value="gotest" />
       <kind value="DIRECTORY" />
       <package value="github.com/evindunn/gtcp/pkg/tcpMessage" />
-      <directory value="$PROJECT_DIR$/pkg/tcpMessage" />
+      <directory value="$PROJECT_DIR$/pkg/tcpmessage" />
       <filePath value="$PROJECT_DIR$/" />
       <method v="2" />
     </configuration>
@@ -102,30 +112,30 @@
       <screen x="0" y="27" width="2560" height="1053" />
     </state>
     <state x="210" y="215" width="800" height="675" key="#Go_Modules_(vgo)/0.27.2560.1053@0.27.2560.1053" timestamp="1578185570826" />
-    <state x="738" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1578195392206">
+    <state x="738" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1578197196135">
       <screen x="0" y="27" width="2560" height="1053" />
     </state>
-    <state x="738" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.2560.1053@0.27.2560.1053" timestamp="1578195392206" />
+    <state x="738" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.2560.1053@0.27.2560.1053" timestamp="1578197196135" />
     <state x="1063" y="311" width="424" height="482" key="FileChooserDialogImpl" timestamp="1578186411184">
       <screen x="0" y="27" width="2560" height="1053" />
     </state>
     <state x="1063" y="311" width="424" height="482" key="FileChooserDialogImpl/0.27.2560.1053@0.27.2560.1053" timestamp="1578186411184" />
-    <state width="2512" height="244" key="GridCell.Tab.0.bottom" timestamp="1578196165365">
+    <state width="2512" height="244" key="GridCell.Tab.0.bottom" timestamp="1578197296269">
       <screen x="0" y="27" width="2560" height="1053" />
     </state>
-    <state width="2512" height="244" key="GridCell.Tab.0.bottom/0.27.2560.1053@0.27.2560.1053" timestamp="1578196165365" />
-    <state width="2512" height="244" key="GridCell.Tab.0.center" timestamp="1578196165364">
+    <state width="2512" height="244" key="GridCell.Tab.0.bottom/0.27.2560.1053@0.27.2560.1053" timestamp="1578197296269" />
+    <state width="2512" height="244" key="GridCell.Tab.0.center" timestamp="1578197296267">
       <screen x="0" y="27" width="2560" height="1053" />
     </state>
-    <state width="2512" height="244" key="GridCell.Tab.0.center/0.27.2560.1053@0.27.2560.1053" timestamp="1578196165364" />
-    <state width="2512" height="244" key="GridCell.Tab.0.left" timestamp="1578196165363">
+    <state width="2512" height="244" key="GridCell.Tab.0.center/0.27.2560.1053@0.27.2560.1053" timestamp="1578197296267" />
+    <state width="2512" height="244" key="GridCell.Tab.0.left" timestamp="1578197296266">
       <screen x="0" y="27" width="2560" height="1053" />
     </state>
-    <state width="2512" height="244" key="GridCell.Tab.0.left/0.27.2560.1053@0.27.2560.1053" timestamp="1578196165363" />
-    <state width="2512" height="244" key="GridCell.Tab.0.right" timestamp="1578196165364">
+    <state width="2512" height="244" key="GridCell.Tab.0.left/0.27.2560.1053@0.27.2560.1053" timestamp="1578197296266" />
+    <state width="2512" height="244" key="GridCell.Tab.0.right" timestamp="1578197296268">
       <screen x="0" y="27" width="2560" height="1053" />
     </state>
-    <state width="2512" height="244" key="GridCell.Tab.0.right/0.27.2560.1053@0.27.2560.1053" timestamp="1578196165364" />
+    <state width="2512" height="244" key="GridCell.Tab.0.right/0.27.2560.1053@0.27.2560.1053" timestamp="1578197296268" />
     <state x="111" y="188" key="SettingsEditor" timestamp="1578188411022">
       <screen x="0" y="27" width="2560" height="1053" />
     </state>

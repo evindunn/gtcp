@@ -20,15 +20,15 @@ jobs:
           path: ~/go/pkg/mod
           key: ${{ runner.os }}-go-${{ hashFiles('go.sum') }}
 
-      - name: Build tcpMessage
-        run: go build -v ./pkg/tcpMessage
+      - name: Build tcpmessage
+        run: go build -v ./pkg/tcpmessage
 
-      - name: Build tcpServer
+      - name: Build tcpserver
         run: |
-          go build -v ./pkg/tcpServer
-          go build -v ./cmd/tcpServer
+          go build -v ./pkg/tcpserver
+          go build -v ./cmd/tcpserver
 
-      - name: Build tcpClient
+      - name: Build tcpclient
         run: |
-          go build -v ./pkg/tcpClient
-          go build -v ./cmd/tcpClient
+          go build -v ./pkg/tcpclient
+          go build -v ./cmd/tcpclient

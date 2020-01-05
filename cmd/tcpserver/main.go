@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	"github.com/evindunn/gtcp/pkg/tcpMessage"
-	"github.com/evindunn/gtcp/pkg/tcpServer"
+	"github.com/evindunn/gtcp/pkg/tcpmessage"
+	"github.com/evindunn/gtcp/pkg/tcpserver"
 	"log"
 	"net"
 	"os"
@@ -14,7 +14,7 @@ type Handler struct {}
 
 func (h *Handler) HandleConnection(c *net.Conn) {
 	connection := *c
-	msg, err := tcpMessage.MessageFromConnection(c)
+	msg, err := tcpmessage.MessageFromConnection(c)
 	if err != nil {
 		log.Printf("[%s] Error parsing connection: %s\n", (*c).RemoteAddr().String(), err)
 	} else {
@@ -44,7 +44,7 @@ func main() {
 	}
 
 	var h Handler
-	srv, err := tcpServer.NewServer(port, &h)
+	srv, err := tcpserver.NewServer(port, &h)
 
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "An error occurred creating the server: %s\n", err)

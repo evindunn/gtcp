@@ -1,4 +1,4 @@
-package tcpMessage
+package tcpmessage
 
 import (
 	"encoding/binary"
