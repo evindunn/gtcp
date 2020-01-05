@@ -33,4 +33,3 @@ jobs:
         run: |
           go build -v ./pkg/tcpClient
           go build -v ./cmd/tcpClient
-

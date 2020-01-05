@@ -1,7 +1,6 @@
 package tcpServer
 
 import (
-	"github.com/evindunn/gtcp/pkg/tcpMessage"
 	"log"
 	"net"
 	"os"
@@ -11,12 +10,13 @@ import (
 )
 
 type Server struct {
-	listener *net.TCPListener
+	listener        net.TCPListener
 	connectionQueue chan *net.Conn
-	signalQueue chan os.Signal
+	signalQueue     chan os.Signal
+	handler         ConnectionHandler
 }
 
-func NewServer(port int) (*Server, error) {
+func NewServer(port int, handler ConnectionHandler) (*Server, error) {
 	addr := net.TCPAddr{
 		IP:   net.IPv4(0, 0, 0, 0),
 		Port: port,
@@ -27,39 +27,22 @@ func NewServer(port int) (*Server, error) {
 		return nil, err
 	}
 
+	// TODO: Max connections
 	srv := Server{
-		listener,
-		make(chan *net.Conn),
+		*listener,
+		make(chan *net.Conn, 1024),
 		make(chan os.Signal, 1),
+		handler,
 	}
 
 	signal.Notify(srv.signalQueue, os.Interrupt)
 	return &srv, nil
 }
 
-func handleMessage(c *net.Conn, wg *sync.WaitGroup) error {
+func (s *Server) handleMessage(c *net.Conn, wg *sync.WaitGroup) {
 	wg.Add(1)
 	defer wg.Done()
-
-	connection := *c
-	msg, err := tcpMessage.MessageFromConnection(c)
-	if err != nil {
-		return err
-	}
-	log.Printf("[%s] %s", connection.RemoteAddr().String(), string(msg.GetContent()))
-
-	_, err = connection.Write([]byte("PONG"))
-	if err != nil {
-		return err
-	}
-
-	err = connection.Close()
-	if err != nil {
-		return err
-	}
-	log.Printf("Closed connection with %s\n", connection.RemoteAddr().String())
-
-	return nil
+	s.handler.HandleConnection(c)
 }
 
 func (s *Server) queueConnections() {
@@ -87,7 +70,7 @@ func (s *Server) Start() {
 
 		select {
 		case c := <- s.connectionQueue:
-			go handleMessage(c, &wg)
+			go s.handleMessage(c, &wg)
 			break
 		default:
 			break
