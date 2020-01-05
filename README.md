@@ -66,7 +66,7 @@ if err != nil {
 srv.Start()
 ```
 
-The [Message](pkg/tcpserver/Server.go) class defines a simple protocol for passing messages in TCP
+The [Message](pkg/tcpmessage/Message.go) class defines a simple protocol for passing messages in TCP
 ```text
 |------- 8 bytes---------|------- 1 byte ---------|------- Remaining bytes ---------|
 |----- messageSize ------|----- isCompressed -----|---------- content --------------|
