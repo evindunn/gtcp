@@ -1,10 +1,10 @@
 # GoLang TCP
 
-<a href="https://github.com/evindunn/Tcp/actions?query=workflow%3ABuild">
+<a href="https://github.com/evindunn/gtcp/actions?query=workflow%3ABuild">
   <img type="image/svg" alt="gotest-status" src="https://github.com/evindunn/gtcp/workflows/Build/badge.svg">
 </a>
 
-<a href="https://github.com/evindunn/Tcp/actions?query=workflow%3ATest">
+<a href="https://github.com/evindunn/gtcp/actions?query=workflow%3ATest">
   <img type="image/svg" alt="gotest-status" src="https://github.com/evindunn/gtcp/workflows/Test/badge.svg">
 </a>
 
