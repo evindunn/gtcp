@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="303f5e29-9c73-4d4b-83ce-fa1266b2f834" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="GOROOT" path="$USER_HOME$/.local/go" />
+  <component name="GoLibraries">
+    <option name="indexEntireGoPath" value="false" />
+  </component>
+  <component name="ProjectId" id="1VxComtEh55CZe3J7lhqR1tdYkb" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="go.import.settings.migrated" value="true" />
+    <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$" />
+    </ignored-roots>
+  </component>
+  <component name="VgoProject">
+    <integration-enabled>true</integration-enabled>
+    <proxy>direct</proxy>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="210" y="215" width="800" height="675" key="#GOROOT" timestamp="1578185562214">
+      <screen x="0" y="27" width="2560" height="1053" />
+    </state>
+    <state x="210" y="215" width="800" height="675" key="#GOROOT/0.27.2560.1053@0.27.2560.1053" timestamp="1578185562214" />
+    <state x="210" y="215" width="800" height="675" key="#Go_Modules_(vgo)" timestamp="1578185570826">
+      <screen x="0" y="27" width="2560" height="1053" />
+    </state>
+    <state x="210" y="215" width="800" height="675" key="#Go_Modules_(vgo)/0.27.2560.1053@0.27.2560.1053" timestamp="1578185570826" />
+    <state x="111" y="188" key="SettingsEditor" timestamp="1578185557982">
+      <screen x="0" y="27" width="2560" height="1053" />
+    </state>
+    <state x="111" y="188" key="SettingsEditor/0.27.2560.1053@0.27.2560.1053" timestamp="1578185557982" />
+  </component>
+</project>

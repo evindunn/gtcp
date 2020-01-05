@@ -1,0 +1,26 @@
+name: Test
+on: [push]
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+
+      - name: Run coverage
+        run: |
+          export PATH=$PATH:$(go env GOPATH)/bin
+          go test ./pkg/tcpMessage ./pkg/tcpClient ./pkg/tcpServer -v -covermode=count -coverprofile=./coverage.out
+
+      - name: Convert coverage to lcov
+        uses: jandelgado/gcov2lcov-action@v1.0.0
+        with:
+          infile: coverage.out
+          outfile: ./coverage.lcov
+
+      - name: Coveralls GitHub Action
+        uses: coverallsapp/github-action@v1.0.1
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path-to-lcov: ./coverage.lcov
