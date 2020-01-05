@@ -10,7 +10,7 @@ import (
 )
 
 /**
-Server: Wrapper for net.TCPListener to simplify multi-threaded message passing
+Server wraps net.TCPListener to simplify multi-threaded message passing
 */
 type Server struct {
 	listener        net.TCPListener
@@ -20,7 +20,7 @@ type Server struct {
 }
 
 /**
-Creates a new server that runs on port and handles connections using handler
+NewServer creates a new server that runs on port and handles connections using handler
 */
 func NewServer(port int, handler ConnectionHandler) (*Server, error) {
 	addr := net.TCPAddr{
