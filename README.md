@@ -8,7 +8,7 @@
   <img type="image/svg" alt="gotest-status" src="https://github.com/evindunn/gtcp/workflows/Test/badge.svg">
 </a>
 
-<a href='https://coveralls.io/github/evindunn/Tcp?branch=master'>
+<a href='https://coveralls.io/github/evindunn/gtcp?branch=master'>
   <img src='https://coveralls.io/repos/github/evindunn/gtcp/badge.svg?branch=master&service=github' alt='Coverage Status' />
 </a>
 
