@@ -39,7 +39,7 @@ Simple TCP message passing in Go
 - github.com/evindunn/gtcp/cmd/tcpserver
 
 Handle connections using the interface defined in [ConnectionHandler.go](pkg/tcpserver/ConnectionHandler.go)
-```text
+```go
 type Handler struct {}
 
 // This method makes the Handler type implement the ConnectionHandler interface
@@ -50,7 +50,7 @@ func (h *Handler) HandleConnection(c *net.Conn) {
 ```
 
 Then use the handler with the [Server](pkg/tcpserver/Server.go) struct
-```text
+```go
 var h Handler
 srv, err := tcpServer.NewServer(8080, &h)
 
@@ -69,7 +69,7 @@ The [Message](pkg/tcpserver/Server.go) class defines a simple protocol for passi
 ```
 
 Receiving a message server-side ([example](cmd/tcpserver/main.go)):
-```text
+```go
 type Handler struct {}
 
 func (h *Handler) HandleConnection(c *net.Conn) {
@@ -97,7 +97,7 @@ func main() {
 ```
 
 Sending a Message client-side ([example in tcpClient.Send()](pkg/tcpclient/Client.go)):
-```text
+```go
 addrStr := "127.0.0.1:8080"
 conn, _ := net.Dial("tcp", addrStr)
 defer conn.Close()
