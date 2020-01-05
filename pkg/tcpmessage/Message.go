@@ -127,39 +127,29 @@ func (m *Message) Decompress() error {
 func MessageFromConnection(c *net.Conn) (*Message, error) {
 	connReader := bufio.NewReader(*c)
 
-	msgSizeBytes := make([]byte, 8)
-	var isCompressedByte byte
-	var content []byte
 	var err error
-
-	msgSize := 0
+	var msgSize int
 	var isCompressed int
+	var content []byte
 
-	for i := 0; i > -1; i++ {
-		if i < HeaderSize-1 {
-			msgSizeBytes[i], err = connReader.ReadByte()
-			if err != nil {
-				return nil, err
-			}
+	// Read header
+	header := make([]byte, HeaderSize)
+	for i:= 0; i < len(header); i++ {
+		header[i], err = connReader.ReadByte()
+		if err != nil {
+			return nil, err
+		}
+	}
 
-		} else if i == HeaderSize-1 {
-			msgSize = int(binary.LittleEndian.Uint64(msgSizeBytes))
-			content = make([]byte, msgSize)
+	msgSize = int(binary.LittleEndian.Uint64(header[:HeaderSize-1]))
+	isCompressed = int(header[HeaderSize-1])
+	content = make([]byte, msgSize)
 
-			isCompressedByte, err = connReader.ReadByte()
-			if err != nil {
-				return nil, err
-			}
-			isCompressed = int(isCompressedByte)
-
-		} else if msgSize > 0 && i < msgSize+HeaderSize {
-			content[i-HeaderSize], err = connReader.ReadByte()
-			if err != nil {
-				return nil, err
-			}
-
-		} else {
-			break
+	// Read content
+	for i:= 0; i < len(content); i++ {
+		content[i], err = connReader.ReadByte()
+		if err != nil {
+			return nil, err
 		}
 	}
 
