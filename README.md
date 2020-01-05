@@ -12,10 +12,22 @@
   <img src='https://coveralls.io/repos/github/evindunn/gtcp/badge.svg?branch=master&service=github' alt='Coverage Status' />
 </a>
 
-A message-passer built on TCP written in GO
-- zlib compression for larger messages
-- Utilities for converting the Tcp.Message to and from raw bytes
-- Utilities for reading/writing Tcp.Message to/from net.Conn
+Simple TCP message passing in Go
+
+- tcpClient
+  - Send(addrStr string, msgStr string) error
+- tcpServer
+  - NewServer(port int, handler ConnectionHandler) (*Server, error)
+  - Server.Start()
+- tcpMessage
+  - NewMessage(content string, isCompressed bool) Message
+  - MessageFromConnection(c *net.Conn) (*Message, error)
+  - Message.ToBytes() []byte
+  - Message.GetContent() []byte
+  - Message.GetSize() int
+  - Message.IsCompressed() bool
+  - Message.Compress() error
+  - Message.Decompress() error
 
 Handle connections using the interface defined in [ConnectionHandler.go](./pkg/tcpServer/ConnectionHandler.go)
 ```text
@@ -75,7 +87,7 @@ func main() {
 }
 ```
 
-Sending a Message client-side ([example](./pkg/tcpClient/Client.go)):
+Sending a Message client-side ([example in tcpClient.Send()](./pkg/tcpClient/Client.go)):
 ```text
 addrStr := "127.0.0.1:8080"
 conn, _ := net.Dial("tcp", addrStr)
