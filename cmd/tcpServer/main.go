@@ -18,14 +18,16 @@ func (h *Handler) HandleConnection(c *net.Conn) {
 	if err != nil {
 		log.Printf("[%s] Error parsing connection: %s\n", (*c).RemoteAddr().String(), err)
 	} else {
-		log.Printf("[%s] %s", connection.RemoteAddr().String(), string(msg.GetContent()))
+		log.Printf(
+			"[%s] Size: %d, Compressed: %v, Content: %s", connection.RemoteAddr().String(),
+			msg.GetSize(),
+			msg.IsCompressed(),
+			string(msg.GetContent()))
 	}
 
 	err = connection.Close()
 	if err != nil {
 		log.Printf("[%s] Error closing connection connection: %s\n", (*c).RemoteAddr().String(), err)
-	} else {
-		log.Printf("[%s] %s", connection.RemoteAddr().String(), string(msg.GetContent()))
 	}
 }
 
