@@ -7,8 +7,8 @@ import (
 )
 
 /**
-	Sends a Message with content msgStr
- */
+Sends a Message with content msgStr
+*/
 func Send(addrStr string, msgStr string) error {
 	conn, err := net.Dial("tcp", addrStr)
 	if conn != nil {

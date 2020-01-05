@@ -17,7 +17,7 @@ const randStrSz = 1024
 func getRandStr(strLen int) string {
 	rand.Seed(time.Now().Unix())
 	randRunes := make([]rune, strLen)
-	for i:= range randRunes {
+	for i := range randRunes {
 		randRunes[i] = rune(rand.Intn(unicodeMax-unicodeMin) + unicodeMin)
 	}
 	return string(randRunes)

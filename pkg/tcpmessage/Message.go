@@ -13,8 +13,8 @@ const compressionLimit = 1024
 const HeaderSize = 9
 
 /**
-	TCP message struct
- */
+TCP message struct
+*/
 type Message struct {
 	content      []byte
 	isCompressed int
@@ -28,19 +28,19 @@ func boolToInt(b bool) int {
 }
 
 /**
-	Creates a new message from content
- */
+Creates a new message from content
+*/
 func NewMessage(content string, isCompressed bool) Message {
 	mContent := []byte(content)
-	return Message{ content: mContent, isCompressed: boolToInt(isCompressed) }
+	return Message{content: mContent, isCompressed: boolToInt(isCompressed)}
 }
 
 /**
-	|------- 8 bytes---------|------- 1 byte ---------|------- messageSize remaining bytes ---------|
-	|----- messageSize ------|----- isCompressed -----|---------------- content -------------------|
- */
+|------- 8 bytes---------|------- 1 byte ---------|------- messageSize remaining bytes ---------|
+|----- messageSize ------|----- isCompressed -----|---------------- content --------------------|
+*/
 func (m *Message) ToBytes() []byte {
-	msg := make([]byte, HeaderSize + m.GetSize())
+	msg := make([]byte, HeaderSize+m.GetSize())
 
 	// 8 bytes for tcpmessage size
 	binary.LittleEndian.PutUint64(msg, uint64(m.GetSize()))
@@ -50,37 +50,37 @@ func (m *Message) ToBytes() []byte {
 
 	// Remaining bytes are data
 	msgContent := m.GetContent()
-	for i := HeaderSize; i < HeaderSize + m.GetSize(); i++ {
-		msg[i] = msgContent[i - HeaderSize]
+	for i := HeaderSize; i < HeaderSize+m.GetSize(); i++ {
+		msg[i] = msgContent[i-HeaderSize]
 	}
 
 	return msg
 }
 
 /**
-	Returns the content of the Message
- */
+Returns the content of the Message
+*/
 func (m *Message) GetContent() []byte {
 	return m.content
 }
 
 /**
-	Returns the length of the Message content
- */
+Returns the length of the Message content
+*/
 func (m *Message) GetSize() int {
 	return len(m.content)
 }
 
 /**
-	Returns whether the Message is compressed
- */
+Returns whether the Message is compressed
+*/
 func (m *Message) IsCompressed() bool {
 	return m.isCompressed == 1
 }
 
 /**
-	Compresses the Message content using zlib if the Message length exceeds compressionLimit
- */
+Compresses the Message content using zlib if the Message length exceeds compressionLimit
+*/
 func (m *Message) Compress() error {
 	if !m.IsCompressed() && m.GetSize() >= compressionLimit {
 		var contentBuf bytes.Buffer
@@ -101,8 +101,8 @@ func (m *Message) Compress() error {
 }
 
 /**
-	Decompresses a compressed Message
- */
+Decompresses a compressed Message
+*/
 func (m *Message) Decompress() error {
 	if m.IsCompressed() {
 		decompressor, err := zlib.NewReader(bytes.NewReader(m.content))
@@ -130,9 +130,9 @@ func (m *Message) Decompress() error {
 }
 
 /**
-	Reads a Message from a net.Conn
- */
-func MessageFromConnection(c *net.Conn) (*Message, error)  {
+Reads a Message from a net.Conn
+*/
+func MessageFromConnection(c *net.Conn) (*Message, error) {
 	connReader := bufio.NewReader(*c)
 
 	msgSizeBytes := make([]byte, 8)
@@ -144,13 +144,13 @@ func MessageFromConnection(c *net.Conn) (*Message, error)  {
 	var isCompressed int
 
 	for i := 0; i > -1; i++ {
-		if i < HeaderSize- 1 {
+		if i < HeaderSize-1 {
 			msgSizeBytes[i], err = connReader.ReadByte()
 			if err != nil {
 				return nil, err
 			}
 
-		} else if i == HeaderSize- 1 {
+		} else if i == HeaderSize-1 {
 			msgSize = int(binary.LittleEndian.Uint64(msgSizeBytes))
 			content = make([]byte, msgSize)
 
@@ -160,8 +160,8 @@ func MessageFromConnection(c *net.Conn) (*Message, error)  {
 			}
 			isCompressed = int(isCompressedByte)
 
-		} else if msgSize > 0 && i < msgSize + HeaderSize {
-			content[i - HeaderSize], err = connReader.ReadByte()
+		} else if msgSize > 0 && i < msgSize+HeaderSize {
+			content[i-HeaderSize], err = connReader.ReadByte()
 			if err != nil {
 				return nil, err
 			}
@@ -172,7 +172,7 @@ func MessageFromConnection(c *net.Conn) (*Message, error)  {
 	}
 
 	return &Message{
-		content: content,
+		content:      content,
 		isCompressed: isCompressed,
 	}, nil
 }
