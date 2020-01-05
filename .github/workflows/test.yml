@@ -25,6 +25,9 @@ jobs:
           export PATH=$PATH:$(go env GOPATH)/bin
           go test ./pkg/tcpmessage ./pkg/tcpclient ./pkg/tcpserver -v -covermode=count -coverprofile=./coverage.out
 
+      - name: Refresh goreport
+        uses: creekorful/goreportcard-action@v0.4
+
       - name: Convert coverage to lcov
         uses: jandelgado/gcov2lcov-action@v1.0.0
         with:
