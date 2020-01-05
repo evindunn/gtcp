@@ -26,9 +26,7 @@ jobs:
       - name: Build tcpserver
         run: |
           go build -v ./pkg/tcpserver
-          go build -v ./cmd/tcpserver
 
       - name: Build tcpclient
         run: |
           go build -v ./pkg/tcpclient
-          go build -v ./cmd/tcpclient
